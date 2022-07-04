@@ -1,0 +1,24 @@
+﻿<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="utf-8" />
+    <title>@ViewBag.Title</title>
+    <link rel="stylesheet" href="~/css/site.css" asp-append-version="true" />
+</head>
+<body>
+    <header>
+        <h2>Backend2</h2>
+        <nav><a asp-controller="Calc" asp-action="Index">Home</a></nav>
+    </header>
+
+    <main>
+        @RenderBody()
+    </main>
+
+    <footer>
+            &copy; 2022 - Backend1
+    </footer>
+
+    @await RenderSectionAsync("Scripts", required: false)
+</body>
+</html>

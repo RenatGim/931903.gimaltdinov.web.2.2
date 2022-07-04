@@ -1,0 +1,25 @@
+﻿@{ var action = ViewContext.RouteData.Values["Action"] as string;
+   var controller = ViewContext.RouteData.Values["Controller"] as string;
+    ViewBag.Title = $"{action} - Backend2"; 
+}
+
+
+<div>
+    <h1>@action</h1>
+    @using (Html.BeginForm(action, controller, FormMethod.Post))
+    {
+        <div>
+            @Html.TextBox("x", "", new { type = "number" })
+        </div>
+
+        <div> 
+            @Html.DropDownList("action", new SelectList(new[] { "+", "-", "*", "/" }))
+        </div>
+
+        <div>
+            @Html.TextBox("y", "", new {type="number" })
+        </div>
+
+        <button type="submit">Submit</button>
+    }
+</div>
